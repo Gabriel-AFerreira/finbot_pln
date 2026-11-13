@@ -5,8 +5,8 @@ services:
     name: finbot-api            # nome no painel (vira parte da URL)
     runtime: python
     plan: free                  # plano gratuito: "dorme" depois de um tempo sem uso
-    buildCommand: pip install -r requirements.txt                    # instala as dependências
-    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT   # liga a API
+    buildCommand: python -m pip install -r requirements.txt          # instala as dependências
+    startCommand: python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /saude     # o Render chama esta rota para saber se a API subiu
     autoDeploy: true            # cada git push na main publica de novo
     envVars:                    # variáveis de ambiente (o .env do servidor)
