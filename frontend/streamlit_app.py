@@ -1,4 +1,3 @@
-# frontend/streamlit_app.py
 """Front do FinBot em Streamlit. Ele NÃO fala com o LLM: só chama a API.
 
 Local:   streamlit run frontend/streamlit_app.py
