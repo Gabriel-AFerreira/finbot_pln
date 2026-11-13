@@ -1,0 +1,47 @@
+Abra http://127.0.0.1:8000/docs → POST /chat → Try it out → envie:
+{"mensagem": "O que é CDI?", "sessao": "teste1"}
+
+Teste:
+{
+  "mensagem": "O que é CDI?",
+  "sessao": "teste-1",
+  "usuario": "anonimo"
+}
+
+Resposta
+{
+  "resposta": "O CDI (Certificado de Depósito Interbancário) é a taxa de juros usada nas operações de empréstimo de curtíssimo prazo entre bancos. Quando um banco precisa de dinheiro por um dia, ele “pega emprestado” de outro banco e paga essa taxa. Por isso, o CDI serve como referência para a maioria dos investimentos de renda fixa no Brasil, como CDBs, LCIs e fundos DI.\n\nNa prática, imagine que você empresta R$ 1.000 a um amigo e combina que ele devolva o valor com um pequeno “acréscimo” ao final de um dia. Esse “acréscimo” seria o equivalente ao CDI naquele dia. Quando você investe em um título que paga, por exemplo, 100 % do CDI, seu rendimento será exatamente igual ao que os bancos estão pagando uns aos outros.\n\nComo o CDI acompanha a taxa Selic (a taxa básica de juros da economia), ele varia ao longo do tempo. Quando a Selic sobe, o CDI também tende a subir, e os investimentos atrelados a ele oferecem retornos maiores; quando a Selic cai, o CDI diminui e os rendimentos ficam menores. Essa relação ajuda a entender como a política monetária afeta seus investimentos de renda fixa."
+}
+
+
+Teste também {"mensagem": "", "sessao": "x"} e veja o 422. O Pydantic barrou antes de chegar no LLM.
+
+Teste:
+{
+  "mensagem": "",
+  "sessao": "x",
+  "usuario": "anonimo"
+}
+
+Resposta:
+{
+  "detail": [
+    {
+      "type": "string_too_short",
+      "loc": [
+        "body",
+        "mensagem"
+      ],
+      "msg": "String should have at least 1 character",
+      "input": "",
+      "ctx": {
+        "min_length": 1
+      }
+    }
+  ]
+}
+PS:
+INFO:     127.0.0.1:49485 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60595 - "POST /chat HTTP/1.1" 422 Unprocessable Content
+
+O erro 422 mostra que o Pydantic cumpriu com seu papel e barrou a requisicao vazia antes de chegar na LLM.
