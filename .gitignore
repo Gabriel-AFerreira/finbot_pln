@@ -17,3 +17,6 @@ __pycache__/
 
 # Segredos do Streamlit (local)
 .streamlit/secrets.toml
+
+# Segredos do MongoDB (local)
+atlas-credentials.env

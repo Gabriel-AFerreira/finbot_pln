@@ -46,6 +46,12 @@ pytest -v
 
 O arquivo `.env` contém chaves privadas e não deve ser enviado ao GitHub. O arquivo `.env.example` contém apenas o modelo das configurações e pode ser publicado.
 
-## Próximas etapas
+## Links do projeto
 
-Este projeto será ampliado nas aulas seguintes. O link do aplicativo publicado será acrescentado aqui quando ele estiver disponível.
+| O quê | Link |
+|---|---|
+| Chat publicado (Streamlit Cloud) | https://finbot-chat-de-investimentos.streamlit.app/ |
+| API publicada (Render) | https://finbot-api-nru0.onrender.com |
+| Documentação da API | https://finbot-api-nru0.onrender.com/docs |
+
+No plano gratuito, a API "dorme" depois de um tempo sem uso: a primeira pergunta pode demorar cerca de 1 minuto.
