@@ -47,6 +47,12 @@ class Settings(BaseSettings):
     mongo_url: str = "mongodb://localhost:27017"
     mongo_banco: str = "finbot"  # nome do banco de dados dentro do servidor
 
+    
+    # Dados de mercado
+    # Token da brapi.dev (opcional): sem ele, só alguns ativos funcionam.
+    brapi_token: SecretStr | None = None
+    max_passos_agente: int = 5  # guardrail: no máximo 5 voltas no loop de tools
+
     @property
     def modelo(self) -> str:
         return self.llm_modelo or MODELOS_PADRAO[self.llm_provedor]
