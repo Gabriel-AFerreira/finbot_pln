@@ -11,4 +11,10 @@ langfuse>=4.0        # registra cada conversa (traces) no painel do Langfuse
 langgraph>=1.0  # grafos de agentes (nós, arestas, estado) e memória por sessão
 langgraph-checkpoint-mongodb>=0.3  # salva a memória do grafo no MongoDB
 pymongo>=4.10  # conecta o Python ao MongoDB
-requests>=2.32  # faz pedidos HTTP às APIs de dados de mercado
+requests>=2.32  # faz pedidos HTTP às APIs de dados de mercado]
+
+# Aula 5 — RAG
+numpy>=1.26  # contas com vetores (listas de números)
+scikit-learn>=1.5  # TF-IDF: transforma texto em vetores de palavras
+pypdf>=5.0  # lê o texto de arquivos PDF
+# fastembed>=0.5   # descomente para RAG_MODO=embeddings (pesado para o plano grátis)

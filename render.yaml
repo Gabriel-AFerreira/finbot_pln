@@ -31,3 +31,6 @@ services:
         # Endereço do MongoDB Atlas (secreto: contém usuário e senha).
       - key: MONGO_URL
         sync: false
+         # Token da brapi.dev (opcional; libera mais ativos).
+      - key: BRAPI_TOKEN
+        sync: false
